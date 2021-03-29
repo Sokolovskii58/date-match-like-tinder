@@ -1,0 +1,99 @@
+#slides {
+    position: relative;
+    height: 500px;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+ 
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+
+    box-sizing: border-box;
+    color: #fff;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+ 
+.user-details {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    width: 200px;
+    margin-left: -15%;
+    font-size: 21px;
+    text-shadow: #f700a6 0 0 10px;
+
+    .user-name {
+    font-size: 31px;
+    }
+    
+}
+
+.showing {
+    opacity: 1;
+    z-index: 2;
+}
+
+#slide-controls {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+
+    span {
+        margin: 0 10px;
+    }
+}
+
+
+.image-carousel {
+    width: 400px;
+    height: 500px;
+    margin: 0 auto;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+.tinder--buttons button {
+  border-radius: 50%;
+  line-height: 60px;
+  width: 60px;
+  border: 0;
+  background: #FFFFFF;
+  display: inline-block;
+  margin: 0 8px;
+}
+
+.tinder--buttons button:focus {
+  outline: 0;
+}
+
+.tinder--buttons i {
+  font-size: 52px;
+  vertical-align: middle;
+}
+
+.fa-heart {
+  color: #FFACE4;
+}
+
+.fa-times-circle {
+  color: #CDD6DD;
+}
+
+.tinder--buttons {
+  flex: 0 0 100px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 30px;
+}
