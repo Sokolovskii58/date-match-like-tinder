@@ -1,1 +1,0 @@
-$(".match-people").on("click")

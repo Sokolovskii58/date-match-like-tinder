@@ -3,7 +3,21 @@ $(function(){
 
  //   $activeSlide.addClass("showing");
 
-    $(".match-people").on("click")
+    $(".match-people").on("click", function(){
+        var account_id = $(this).data("id");
+
+        $.ajax({
+            url: "/get/conversation/"+account_id,
+            method: "post",
+            dataType: "script"
+        })
+
+        // $("#conversation").show();
+    });
+
+    $("#close-conversation").on("click", function(){
+      $("#conversation").hide();
+    })
 
     $("#decline").on("click", function(){
         goToSlide('decline');
@@ -19,18 +33,18 @@ $(function(){
         })
         goToSlide('#approve');
     });
-    
+
     function goToSlide(action){
         $activeSlide.removeClass("showing");
         $activeSlide = $activeSlide.next(".slide");
-        
-        
+
+
         if(action == "approve"){
-            
+
         } else {
-            
+
         }
-        
+
         $activeSlide.addClass("showing");
     }
 });
