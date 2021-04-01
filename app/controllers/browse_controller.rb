@@ -29,11 +29,13 @@ class BrowseController < ApplicationController
 
 	end
 
-	def conversation
+	def open_conversation
 		id = params[:id]
 		@profile = Account.find(id)
 		likes = Like.where(account_id: current_account.id, liked_account_id: id)
 		@match = likes.first if likes.size > 0
+		@conversation = Conversation.new
+		@message = @conversation.messages.build
 
 		if @profile.present?
 

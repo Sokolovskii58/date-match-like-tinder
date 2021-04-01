@@ -1,5 +1,6 @@
 class Conversation < ApplicationRecord
   has_many :messages, dependent: :destroy
+  accepts_nested_attributes_for :messages, allow_destroy: true
   validates_uniqueness_of :sender_id, scope: :recipient_id
 
 
