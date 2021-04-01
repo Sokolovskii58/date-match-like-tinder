@@ -25,7 +25,12 @@
         <ul id="slides">
             <% @users.each_with_index do |user, i| %>
             <li class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
+              <% if user.images.attached? %>
                 <div class="image-carousel" style="background-image: url('<%= url_for user.images.first %>')"></div>
+              <% else %>
+                <div class="image-carousel" style="background-image: url('')"></div>
+              <% end %>
+
                 <div class="user-details">
                     <span class="user-name"><%= user.first_name %></span>, 31<br />
                     <i class="fa fa-graduation-cap"></i> &nbsp Job /Studies<br />
