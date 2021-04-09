@@ -1,87 +1,78 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+  <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+    <div class="row align-items-center g-5 py-5">
+      <div class="col-10 mx-auto col-lg-35">
+        <div class="p-5 border rounded-3 bg-dark">
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+            <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-floating mb-3">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+            <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+            <% end %>
+            <label for="floatingInput">Email address</label>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control" %>
+            <label for="floatingPassword">Username</label>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control" %>
+            <label for="floatingPassword">First Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control" %>
+            <label for="floatingPassword">Last Name</label>
+          </div>
+          <div class="form-floating mb-3">
+            <%= f.text_field :age, autocomplete: "age", class: "form-control" %>
+            <label for="floatingPassword">Age</label>
+          </div>
+           <div class="form-floating mb-3">
+            <%= f.text_field :education, class: "form-control" %>
+            <label for="floatingPassword">Education</label>
+          </div>
+          <div class="form-floating mb-3">
+           <%= f.text_field :location, class: "form-control" %>
+           <label for="floatingPassword">Location</label>
+         </div>
+         <div class="form-floating mb-3">
+          <%= f.text_area :description, class: "form-control" %>
+          <label for="floatingPassword">Description</label>
+        </div>
+        <div class="form-floating mb-3">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+         <label for="floatingPassword">New Password</label>
+       </div>
+       <div class="form-floating mb-3">
+       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <label for="floatingPassword">Confirm Password</label>
+      </div>
+      <div class="text-light"  <i>Current Password(we need your current password to confirm your changes)</i></div>
+      <div class="form-floating mb-3">
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+       <label for="floatingPassword">Current Password</label>
+     </div>
+     <div class="form-floating mb-3">
+     <div class="card p-2">
+       <%= f.label :images %>
+       <%= f.file_field :images, multiple: true %>
+     </div>
+   </div>
+   <div class="form-floating mb-3" >
+   <% if resource.images.attached? %>
+     <% resource.images.each do |image| %>
+       <%= image_tag image, width: "200px" %>
+     <% end %>
+   <% end %>
+</div>
+           <%= f.submit "Update", class: "w-100 btn btn-lg btn btn-outline-info" %>
+           <% end %>
 
-  <div class="form-group">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+           <%= link_to "Back", :back %>
+          <hr class="my-4">
+          <small class="text-muted"> </small>
+        </div>
+      </div>
+    </div>
   </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :age %><br />
-    <%= f.text_field :age, autocomplete: "age" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :education %><br />
-    <%= f.text_field :education %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
-    <%= content_tag :small, "#{@minimum_password_length} characters minimum" if @minimum_password_length %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :images %>
-    <%= f.file_field :images, multiple: true %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-
-  <% if resource.images.attached? %>
-    <% resource.images.each do |image| %>
-      <%= image_tag image, width: "200px" %>
-    <% end %>
-  <% end %>
-
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

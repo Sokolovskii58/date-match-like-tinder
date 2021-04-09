@@ -17,9 +17,10 @@
      </ul>
     <hr>
     <div class="dropdown">
-      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+      <div class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
         <img <%= link_to profile_thumbnail(current_account, { width: "32px", height: "32px", class: "rounded-circle me-23" }), edit_account_registration_path %>
-       </a>
+       </div>
+       
       <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
         <li><a <%= link_to "My Profile", edit_account_registration_path, class: "dropdown-item" %></a></li>
         <li><hr class="dropdown-divider"></li>

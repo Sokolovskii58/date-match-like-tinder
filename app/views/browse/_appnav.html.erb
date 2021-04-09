@@ -1,12 +1,12 @@
 <header class="site-header sticky-top py-1 bg-white border-bottom py-4">
   <nav class="container d-flex flex-column flex-md-row justify-content-between">
-    <i class="fa fa-user fa-2x data-bs-target="#pills-profile""></i>
+    <%= link_to " ", edit_account_registration_path, class: "fa fa-user fa-2x data-bs-target" %>
     <i class="fa fa-fire fa-2x"></i>
 
 
 
 
+    <%= link_to '', destroy_account_session_path, :method => :delete, :class => "fa fa-door-open fa-2x" %></a>
 
-    <i id="get_message" class="fa fa-door-open fa-2x"></i>
-  </nav>
+   </nav>
 </header>

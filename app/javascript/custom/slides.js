@@ -4,18 +4,7 @@ $(function(){
  //   $activeSlide.addClass("showing");
 
 
-     $(".get_message").on("click", function(){
-         var account_id = $(this).data("id");
-
-         $.ajax({
-             url: "/matches",
-             method: "post",
-             dataType: "script"
-         })
-
-         // $("#conversation").show();
-     });
-
+ 
     $(".match-people").on("click", function(){
         var account_id = $(this).data("id");
 
