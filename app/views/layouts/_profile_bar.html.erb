@@ -1,9 +1,8 @@
 <div class="bg-danger profile-bar">
-
-	<%= link_to image_tag(current_account.images.first, width: "40px", height: "40px", class: "float-right profile-thumb rounded-circle mr-2"), edit_account_registration_path %>
-
-	<%= link_to "My Profile", edit_account_registration_path, class: "d-inline-block my-profile mt-2 text-white" %>
-
-	<%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "float-right text-white mt-2" %>
-
- </div>
+    <!-- TODO: link to profile page -->
+    <div class="d-block text-white">
+        <%= link_to profile_thumbnail(current_account, { width: "40px", height: "40px", class: "float-left profile-thumb rounded-circle mr-3" }), edit_account_registration_path %>
+        <%= link_to "My Profile", edit_account_registration_path, class: "d-inline-block my-profile mt-1 text-white" %>
+        <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "float-right text-white mt-2" %>
+    </div>
+</div>

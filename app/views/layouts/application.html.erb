@@ -12,13 +12,12 @@
 
   <body>
     <%= render "layouts/nav" unless account_signed_in? %>
-    
 
-    <div class="container-fluid p-0 bg-light">
+
+    <div class="container-fluid p-0  ">
       <%= yield %>
 
-      <%= render "layouts/footer" unless account_signed_in? %>
     </div>
-
   </body>
+  
 </html>

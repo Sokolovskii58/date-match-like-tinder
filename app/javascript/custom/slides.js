@@ -3,6 +3,19 @@ $(function(){
 
  //   $activeSlide.addClass("showing");
 
+
+     $(".get_message").on("click", function(){
+         var account_id = $(this).data("id");
+
+         $.ajax({
+             url: "/matches",
+             method: "post",
+             dataType: "script"
+         })
+
+         // $("#conversation").show();
+     });
+
     $(".match-people").on("click", function(){
         var account_id = $(this).data("id");
 
@@ -20,7 +33,14 @@ $(function(){
     })
 
     $("#decline").on("click", function(){
-        goToSlide('decline');
+      var user_id = $activeSlide.data("id");
+
+      $.ajax({
+          url: "/decline/" + user_id,
+          method: "post",
+          dataType: "ajax"
+      })
+      goToSlide('#decline');
     });
 
     $("#approve").on("click", function(){

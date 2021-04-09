@@ -16,3 +16,24 @@
 
 @import 'bootstrap/scss/bootstrap';
 @import 'slides';
+
+
+body {
+  background-image: url(back.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  color: #d1d4d7c9;
+  }
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+      background-color: #212529;
+}
+
+.row {
+      margin-right: 0px;
+}
+
+a {
+  color: #cdd5e0;
+}

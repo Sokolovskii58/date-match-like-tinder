@@ -5,7 +5,7 @@
     margin: 50px 0px;
     list-style-type: none;
 }
- 
+
 .slide {
     position: absolute;
     left: 0px;
@@ -23,11 +23,11 @@
     -o-transition: opacity 1s;
     transition: opacity 1s;
 }
- 
+
 .user-details {
     position: absolute;
     bottom: 50px;
-    left: 50%;
+    left: 55%;
     width: 200px;
     margin-left: -15%;
     font-size: 21px;
@@ -36,7 +36,7 @@
     .user-name {
     font-size: 31px;
     }
-    
+
 }
 
 .showing {
@@ -84,7 +84,29 @@
 }
 
 .fa-heart {
-  color: #FFACE4;
+  color: #ff39bf;
+}
+
+.fa-grin-stars {
+  color: #0dcaf0;
+}
+
+.fa-ban {
+  color: #f00d61d4;
+
+}
+
+.shadow {
+  box-shadow: 0 30px 53px 0 rgba(0,0,0,.3)!important;
+
+}
+
+.swipecard{
+  box-shadow: 0 30px 53px 0 rgba(0,0,0,.3)!important;
+  border-radius: 50%;
+  padding: 2vw!important;
+  cursor: pointer;
+
 }
 
 .fa-times-circle {

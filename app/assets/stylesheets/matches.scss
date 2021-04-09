@@ -6,6 +6,7 @@
     background-size: cover;
     position: relative;
     cursor: pointer;
+    margin-top: 10px;
 
     p {
         position: absolute;
@@ -48,6 +49,13 @@
     border: 2px solid #fff;
 }
 
+.open-conversation {
+    background: #efefef;
+    border-bottom: 1px solid #ddd;
+    padding-top: 20px;
+    cursor: pointer;
+}
+
 #conversation {
     display: none;
     width: 96%;
@@ -55,7 +63,42 @@
     position: absolute;
     left: 2%;
     top: 2%;
-    padding: 30px;
+    padding: 130px;
     z-index: 1000;
-    background: #fff;
+    background-color: #ffffff;
+
+    .top-bar {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 20px;
+        margin-bottom: 30px;
+    }
+
+    .bottom-bar {
+        border-top: 1px solid #ddd;
+        padding-top: 20px;
+        margin-top: 30px;
+    }
+
+    .conversation-message {
+        background: #f2f2f2;
+
+        p {
+            margin: 0;
+
+        }
+    }
+
+    .sent-by-me {
+        .conversation-message {
+            background: #b3d7ff;
+        }
+    }
+
+    #close-conversation {
+        cursor: pointer;
+
+        &:hover {
+            color: #000 !important;
+        }
+    }
 }

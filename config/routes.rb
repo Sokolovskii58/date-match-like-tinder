@@ -12,4 +12,5 @@ Rails.application.routes.draw do
   post "get/conversation/:id" => "browse#open_conversation", as: :open_conversation
 
   root to: "public#home"
+
 end
