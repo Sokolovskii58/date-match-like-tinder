@@ -69,7 +69,9 @@
            <%= f.submit "Update", class: "w-100 btn btn-lg btn btn-outline-info" %>
            <% end %>
 
-           <%= link_to "Back", :back %>
+           <p><%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "text-light bg-dark border-0 md-4 " %></p>
+
+           <%= link_to "Back", :back, class: "text-light bg-dark border-0" %>
           <hr class="my-4">
           <small class="text-muted"> </small>
         </div>

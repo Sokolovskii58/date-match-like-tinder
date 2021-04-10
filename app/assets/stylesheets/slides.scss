@@ -27,7 +27,22 @@
 .user-details {
     position: absolute;
     bottom: 50px;
-    left: 45%;
+    left: 55%;
+    width: 200px;
+    margin-left: -15%;
+    font-size: 21px;
+    text-shadow: #f700a6 0 0 10px;
+
+    .user-name {
+    font-size: 31px;
+    }
+
+}
+
+.user-details-mobile {
+    position: absolute;
+    bottom: 50px;
+    left: 35%;
     width: 200px;
     margin-left: -15%;
     font-size: 21px;
