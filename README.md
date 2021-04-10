@@ -8,6 +8,8 @@ This application contains minimal functionality and is suitable for a full-fledg
 
 This is just a pet project, which most likely will not be further developed by me
 
+
+Please, if you will view the application on Heroku, add any picture and any first_name to your profile!
 Heroku https://date-match-like.herokuapp.com/
 
 Mobile:
