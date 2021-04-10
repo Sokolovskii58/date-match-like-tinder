@@ -7,9 +7,7 @@ module AccountsHelper
     end
 
     def get_account_from_conversation conversation
-        # match相手のid
-        matched_account_id = conversation.sender_id == current_account.id ? conversation.recipient_id : conversation.sender_id
-        # match相手のAccountオブジェクト
-        return @matches.select{ |account| account.id == matched_account_id }.first
+         matched_account_id = conversation.sender_id == current_account.id ? conversation.recipient_id : conversation.sender_id
+         return @matches.select{ |account| account.id == matched_account_id }.first
     end
 end

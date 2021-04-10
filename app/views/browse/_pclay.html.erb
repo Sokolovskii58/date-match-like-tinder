@@ -1,0 +1,55 @@
+<%= render "browse/appnav" %>
+<div class="row bg-light">
+  <div class="d-flex flex-column p-3 text-white bg-dark" style="width: 280px;">
+    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+      <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+      <span class="fs-4">Matches</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto ">
+      <li class="nav-item">
+        <a class="nav-link active">
+          <%= render "browse/matches" %>
+        </a>
+        <div id="conversation">
+          </div>
+      </li>
+     </ul>
+    <hr>
+    <div class="dropdown">
+      <div class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+        <img <%= link_to profile_thumbnail(current_account, { width: "32px", height: "32px", class: "rounded-circle me-23" }), edit_account_registration_path %>
+       </div>
+
+      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+        <li><a <%= link_to "My Profile", edit_account_registration_path, class: "dropdown-item" %></a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "dropdown-item" %></a></li>
+      </ul>
+    </div>
+  </div>
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+
+      <ul id="slides">
+          <% @users.each_with_index do |user, i| %>
+          <li class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
+            <% if user.images.attached? %>
+              <div class="image-carousel shadow" style="background-image: url('<%= url_for user.images.first %>')"></div>
+            <% else %>
+              <div class="image-carousel" style="background-image: url('')"></div>
+            <% end %>
+
+              <div class="user-details">
+                  <span class="user-name"><%= user.first_name %></span>, 31<br />
+                  <i class="fa fa-graduation-cap"></i> &nbsp Job /Studies<br />
+                  &nbsp<i class="fa fa-map-marker"></i> &nbsp &nbsp Location
+              </div>
+          </li>
+          <% end %>
+      </ul>
+      <%= render "browse/appfooter" %>
+    </main>
+
+      </div>
+    </main>
+  </div>

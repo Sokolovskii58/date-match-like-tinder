@@ -1,0 +1,31 @@
+<header class="py-3  bg-light border-bottom">
+  <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+    <div class="dropdown">
+      <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownNavLink" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="fab fa-gg fa-2x"></i>
+
+      </a>
+      <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownNavLink" style="">
+        <li class="text-centr px-4">Matches </li>
+        <%= render "browse/matches" %>
+      </ul>
+    </div>
+
+    <div class="d-flex align-items-center">
+      <form class="w-100 me-3">
+       </form>
+
+      <div class="flex-shrink-0 dropdown">
+        <div class="d-flex align-items-center   mb-2 mb-lg-0 link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <img <%= link_to profile_thumbnail(current_account, { width: "32px", height: "32px", class: "rounded-circle me-23" }), edit_account_registration_path %>
+         </div>
+
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+          <li><a <%= link_to "My Profile", edit_account_registration_path, class: "dropdown-item" %></a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a <%= link_to "Sign Out", destroy_account_session_path, method: :delete, class: "dropdown-item" %></a></li>
+        </ul>
+      </div>
+      </div>
+    </div>
+ </header>

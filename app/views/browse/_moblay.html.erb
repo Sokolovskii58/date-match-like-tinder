@@ -1,0 +1,26 @@
+<%= render "browse/mobnav" %>
+<div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <ul id="slides">
+            <% @users.each_with_index do |user, i| %>
+            <li class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
+              <% if user.images.attached? %>
+                <div class="image-carousel" style="background-image: url('<%= url_for user.images.first %>')"></div>
+              <% else %>
+                <div class="image-carousel" style="background-image: url('')"></div>
+              <% end %>
+
+                <div class="user-details">
+                    <span class="user-name"><%= user.first_name %></span>, 31<br />
+                    <i class="fa fa-graduation-cap"></i> &nbsp Job /Studies<br />
+                    &nbsp<i class="fa fa-map-marker"></i> &nbsp &nbsp Location
+                </div>
+            </li>
+            <% end %>
+        </ul>
+        <div id="conversation">
+        </div>
+
+        <%= render "browse/mobfooter" %>
+      </div>
+    </div>
