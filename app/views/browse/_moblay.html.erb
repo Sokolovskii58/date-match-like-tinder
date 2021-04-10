@@ -1,6 +1,6 @@
 <%= render "browse/mobnav" %>
-<div class="p-5 mb-4 bg-light rounded-3">
-      <div class="container-fluid py-5">
+<div class="p-1 mb-4 bg-light rounded-3">
+      <div class="container-fluid">
         <ul id="slides">
             <% @users.each_with_index do |user, i| %>
             <li class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
