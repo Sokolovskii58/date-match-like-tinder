@@ -5,9 +5,9 @@
             <% @users.each_with_index do |user, i| %>
             <li class="slide <%= 'showing' if i == 0 %>" data-id="<%= user.id %>">
               <% if user.images.attached? %>
-                <div class="image-carousel" style="background-image: url('<%= url_for user.images.first %>')"></div>
+                <div class="image-carousel-mobile" style="background-image: url('<%= url_for user.images.first %>')"></div>
               <% else %>
-                <div class="image-carousel" style="background-image: url('')"></div>
+                <div class="image-carousel-mobile" style="background-image: url('')"></div>
               <% end %>
 
                 <div class="user-details-mobile">

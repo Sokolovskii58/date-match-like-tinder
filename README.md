@@ -8,24 +8,10 @@ This application contains minimal functionality and is suitable for a full-fledg
 
 This is just a pet project, which most likely will not be further developed by me
 
+Heroku https://date-match-like.herokuapp.com/
 
-Inline-style:
+Mobile:
+![alt text](https://github.com/Sokolovskii58/date-match-like-tinder/blob/main/datemob.gif "PC")
+
+PC:
 ![alt text](https://github.com/Sokolovskii58/date-match-like-tinder/blob/main/datepc.gif "PC")
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
